@@ -1,0 +1,31 @@
+@media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-bar {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  /* Mobile view */
+  @media (max-width: 480px) {
+    .header {
+      padding: 10px;
+    }
+  
+    .navbar .nav-links {
+      gap: 15px;
+    }
+  
+    .search-bar input {
+      width: 100px;
+    }
+  }
+  

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metropol Header</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <!-- NEWS BAR -->
+  <div class="news-bar">
+    Pädagogen Psychologen Sozialarbeiter/innen gesucht.
+    <a href="news.html"> Entdecken Sie mehr...</a>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <!-- LEFT: Logo -->
+    <div class="logo">
+      <img src="metropol-logo.png" alt="Metropol Logo" />
+    </div>
+    <!-- CENTER: Navigation Menu -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Über Uns</a>
+          <ul class="dropdown-menu">
+            <li><a href="Wirsind.html">Wir sind</a></li>
+            <li><a href="unserewerte.html">Unsere Werte</a></li>
+          </ul>
+        </li>
+        <li><a href="missionundvision.html">Vision</a></li>
+        <li class="dropdown">
+          <a href="#">Projekte</a>
+          <ul class="dropdown-menu">
+            <li><a href="angeboteg.html">Erstaufnahme</a></li>
+            <li><a href="angboteG.html">Clearingeinrichtung</a></li>
+            <li><a href="angboteG2.html">Aktuelle Projekte</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="active" href="#">Unsere Angebote</a>
+          <ul class="dropdown-menu">
+            <li><a href="ganzheitliche-vor-ort-betreuung.html">Ganzheitliche Vor-Ort-Betreuung</a></li>
+            <li><a href="sprachkurs.html">Sprachkurs</a></li>
+            <li><a href="integrationshilfe.html">Integrationshilfe in die deutsche Kultur</a></li>
+          </ul>
+        </li>
+        <li><a href="news.html">Karriere</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <!-- RIGHT: Digital Clock -->
+    <!-- Removed the digital clock -->
+  </header>
+
+  <!-- SLIDESHOW SECTION -->
+  <div class="slideshow-container">
+    <div class="slide fade" style="display:block;">
+      <a href="ganzheitliche-vor-ort-betreuung.html"><img src="Pics/hands.jpg" alt="Slide 1"></a>
+    </div>
+    <div class="slide fade">
+      <a href="sprachkurs.html"><img src="Pics/paint.jpg" alt="Slide 2"></a>
+    </div>
+    <div class="slide fade">
+      <a href="integrationshilfe.html"><img src="Pics/greenbowl.jpg" alt="Slide 3"></a>
+    </div>
+    <div class="slide fade">
+      <a href="angeboteg.html"><img src="Pics/greenplant.jpg" alt="Slide 4"></a>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div style="text-align:center; margin-top:10px;">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+  <noscript>
+    <div style="color:red; text-align:center;">Bitte aktivieren Sie JavaScript, um die Slideshow zu sehen.</div>
+  </noscript>
+
+  <!-- Kontakt Modal -->
+  <div id="kontaktModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:2000; align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:2em 2.5em; border-radius:14px; box-shadow:0 8px 32px rgba(38,103,255,0.13); max-width:350px; margin:auto; text-align:left; font-size:1.1em; color:#1B263B; position:relative;">
+      <button id="closeKontakt" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:1.3em; color:#2667FF; cursor:pointer;">&times;</button>
+      <div style="margin-top:1.5em;">
+        <div><strong>Email:</strong> info@metropoljugendhilfe.de</div>
+        <div><strong>Phone:</strong> +49 (0) 30 863224170</div>
+        <div><strong>Addresse:</strong>&nbsp; Mehringdamm 32, 10961 Berlin</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login/Register Modal -->
+  <div id="authModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:3000; align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:2em 2.5em; border-radius:14px; box-shadow:0 8px 32px rgba(38,103,255,0.13); max-width:350px; margin:auto; text-align:left; font-size:1.1em; color:#1B263B; position:relative;">
+      <button id="closeAuth" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:1.3em; color:#2667FF; cursor:pointer;">&times;</button>
+      <div id="authForms">
+        <!-- Login Form -->
+        <form id="loginForm" style="display:block;">
+          <h2 style="margin-bottom:1em;">Anmelden</h2>
+          <label for="loginEmail">E-Mail</label><br>
+          <input type="email" id="loginEmail" required style="width:100%;margin-bottom:1em;" /><br>
+          <label for="loginPassword">Passwort</label><br>
+          <input type="password" id="loginPassword" required style="width:100%;margin-bottom:1em;" /><br>
+          <button type="submit" style="width:100%;background:#2667FF;color:#fff;padding:0.7em;border:none;border-radius:6px;">Einloggen</button>
+          <div id="loginError" style="color:red;margin-top:0.5em;display:none;"></div>
+        </form>
+        <!-- Register Form -->
+        <form id="registerForm" style="display:none;">
+          <h2 style="margin-bottom:1em;">Registrieren</h2>
+          <label for="registerEmail">E-Mail</label><br>
+          <input type="email" id="registerEmail" required style="width:100%;margin-bottom:1em;" /><br>
+          <label for="registerPassword">Passwort</label><br>
+          <input type="password" id="registerPassword" required style="width:100%;margin-bottom:1em;" /><br>
+          <button type="submit" style="width:100%;background:#2667FF;color:#fff;padding:0.7em;border:none;border-radius:6px;">Registrieren</button>
+          <div id="registerError" style="color:red;margin-top:0.5em;display:none;"></div>
+          <div id="registerSuccess" style="color:green;margin-top:0.5em;display:none;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Clock -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('digitalClock').textContent = `${h}:${m}:${s}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+  <script src="script.js"></script>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="metropol-logo.png" alt="Metropol Jugendhilfe Logo" style="height: 60px; margin-bottom: 10px;">
+      </div>
+      <div class="footer-info">
+        <div><strong>Metropol Jugendhilfe gGmbH</strong></div>
+        <div>Mehringdamm 32, 10961 Berlin</div>
+        <div>Telefon: +49 (0) 30 863224170</div>
+        <div>Email: info@metropoljugendhilfe.de</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="Wirsind.html">Wir sind</a> |
+        <a href="unserewerte.html">Unsere Werte</a> |
+        <a href="missionundvision.html">Vision</a> |
+        <a href="Kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2025 Metropol Jugendhilfe gGmbH. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
